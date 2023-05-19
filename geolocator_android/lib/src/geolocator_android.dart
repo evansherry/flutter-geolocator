@@ -128,6 +128,21 @@ class GeolocatorAndroid extends GeolocatorPlatform {
   }
 
   @override
+  Future<bool> stopPositionUpdates({bool forceLocationManager = false}) {
+    try {
+      final parameters = <String, dynamic>{
+        'forceLocationManager': forceLocationManager,
+      };
+      return _methodChannel
+          .invokeMethod('stopPositionUpdates', parameters)
+          .then((value) => value ?? false);
+    } on PlatformException catch (e) {
+      final error = _handlePlatformException(e);
+      throw error;
+    }
+  }
+
+  @override
   Stream<ServiceStatus> getServiceStatusStream() {
     if (_serviceStatusStream != null) {
       return _serviceStatusStream!;

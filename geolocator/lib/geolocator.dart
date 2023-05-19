@@ -134,6 +134,9 @@ class Geolocator {
         locationSettings: locationSettings,
       );
 
+  // static Future<bool> stopPositionUpdates({bool forceAndroidLocationManager = false}) =>
+  //     GeolocatorPlatform.instance.stopPositionUpdates();
+
   /// Returns a [Future] containing a [LocationAccuracyStatus]
   /// When the user has given permission for approximate location,
   /// [LocationAccuracyStatus.reduced] will be returned, if the user has

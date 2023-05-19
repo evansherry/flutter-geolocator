@@ -125,6 +125,12 @@ abstract class GeolocatorPlatform extends PlatformInterface {
         'getServiceStatusStream() has not been implemented.');
   }
 
+  Future<bool> stopPositionUpdates({bool forceLocationManager = false}) {
+    throw UnimplementedError(
+      'stopPositionUpdates() has not been implemented.',
+    );
+  }
+
   /// Fires whenever the location changes inside the bounds of the
   /// [desiredAccuracy].
   ///
